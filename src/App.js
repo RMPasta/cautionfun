@@ -12,6 +12,27 @@ function App() {
         <div className="block merch">Merch</div>
         <div className="block ref-links">Ref Links</div>
       </div>
+
+      <div className="footer">
+        <ul className="socials">
+          <li>
+            <img src="socialIcon" alt="socials" />
+            <a href="sociallink">Social</a>
+          </li>
+          <li>
+            <img src="socialIcon" alt="socials" />
+            <a href="sociallink">Social</a>
+          </li>
+          <li>
+            <img src="socialIcon" alt="socials" />
+            <a href="sociallink">Social</a>
+          </li>
+          <li>
+            <img src="socialIcon" alt="socials" />
+            <a href="sociallink">Social</a>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 }

@@ -8,7 +8,7 @@
   display: flex;
   justify-content: space-around;
   width: 100%;
-  margin: 5rem 0;
+  margin: 3rem 0;
 }
 
 .block {
@@ -19,4 +19,18 @@
   background-color: grey;
   height: 20rem;
   width: 30rem;
+}
+
+.footer {
+  width: 100%;
+  margin-top: 5rem;
+}
+
+.socials {
+  display: flex;
+  justify-content: space-around;
+}
+
+li {
+  list-style: none;
 }
