@@ -16,9 +16,27 @@
   justify-content: center;
   align-items: center;
   border: 1px solid black;
-  background-color: grey;
+  background-color: lightgrey;
   height: 20rem;
   width: 30rem;
+  border-radius: 10px;
+  filter: drop-shadow(4px 4px 10px black);
+}
+
+.block:hover {
+  background-color: darkgrey;
+}
+
+.block:active {
+  filter: drop-shadow(1px 1px 3px black);
+}
+
+.merch {
+  font-size: 5rem;
+}
+
+.ref-links {
+  font-size: 5rem;
 }
 
 .footer {
