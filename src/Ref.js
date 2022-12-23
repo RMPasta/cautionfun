@@ -3,7 +3,7 @@ import React from "react";
 export default function Ref() {
   return (
     <div className="body">
-      <h1>Referal Links</h1>
+      <h1>Referral Links</h1>
       <div className="three-wide-lists">
         <></>
         <div className="gu ref-card">
