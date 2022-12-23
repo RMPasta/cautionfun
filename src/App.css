@@ -3,6 +3,9 @@
   align-items: center;
   flex-direction: column;
 }
+h1 {
+  font-size: 3rem;
+}
 
 a {
   text-decoration: none;
@@ -11,9 +14,10 @@ a {
 
 .two-across {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   width: 100%;
-  margin: 3rem 0;
+  margin: 1rem 0;
 }
 
 .block {
@@ -21,7 +25,7 @@ a {
   justify-content: center;
   align-items: center;
   border: 1px solid black;
-  background-color: lightgrey;
+  background-color: whitesmoke;
   height: 20rem;
   width: 30rem;
   border-radius: 10px;
@@ -29,11 +33,11 @@ a {
 }
 
 .block:hover {
-  background-color: darkgrey;
+  background-color: lightgrey;
 }
 
 .block:active {
-  filter: drop-shadow(1px 1px 3px black);
+  filter: drop-shadow(1px 1px 2px black);
 }
 
 .merch {
@@ -45,8 +49,9 @@ a {
 }
 
 .footer {
-  width: 100%;
+  width: 90%;
   margin-top: 5rem;
+  font-size: 1.3rem;
 }
 
 .socials {
@@ -56,4 +61,8 @@ a {
 
 li {
   list-style: none;
+}
+
+.fa-brands {
+  font-size: 2rem;
 }
