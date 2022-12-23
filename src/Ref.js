@@ -3,6 +3,15 @@ import React from "react";
 export default function Ref() {
   return (
     <div className="body">
+      <div className="nav">
+        <a href="/" className="nav-home">
+          <div>Home</div>
+        </a>
+        <a href="/merch" className="nav-merch">
+          <div>Merch</div>
+        </a>
+      </div>
+
       <h1>Referral Links</h1>
       <div className="three-wide-lists">
         <></>

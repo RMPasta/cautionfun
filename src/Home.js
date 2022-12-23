@@ -18,19 +18,19 @@ export default function Home() {
 
       <div className="footer">
         <ul className="socials">
-          <li>
+          <li className="socials-container">
             <i class="fa-brands fa-twitch"></i>
             <a href="https://twitch.tv/cautionfun_gu" target="blank">
               cautionfun_gu
             </a>
           </li>
-          <li>
+          <li className="socials-container">
             <i class="fa-brands fa-twitter"></i>
             <a href="https://twitter.com/cautionfun_" target="blank">
               @cautionfun
             </a>
           </li>
-          <li>
+          <li className="socials-container">
             <i class="fa-brands fa-discord"></i>
             <a href="https://discord.gg/Z7CeepuUPe" target="blank">
               @cautionfun#3236
