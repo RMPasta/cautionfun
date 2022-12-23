@@ -6,7 +6,6 @@ export default function Home() {
       <img src={require("./images/yt-thumbnail.jpeg")} alt="cautionfun logo" />
 
       <h1>Cautionfun</h1>
-      <h2>Stuff</h2>
 
       <div className="two-across">
         <a href="/merch" className="block merch">
@@ -20,20 +19,22 @@ export default function Home() {
       <div className="footer">
         <ul className="socials">
           <li>
-            <img src="socialIcon" alt="socials" />
-            <a href="sociallink">Social</a>
+            <i class="fa-brands fa-twitch"></i>
+            <a href="https://twitch.tv/cautionfun_gu" target="blank">
+              cautionfun_gu
+            </a>
           </li>
           <li>
-            <img src="socialIcon" alt="socials" />
-            <a href="sociallink">Social</a>
+            <i class="fa-brands fa-twitter"></i>
+            <a href="https://twitter.com/cautionfun_" target="blank">
+              @cautionfun
+            </a>
           </li>
           <li>
-            <img src="socialIcon" alt="socials" />
-            <a href="sociallink">Social</a>
-          </li>
-          <li>
-            <img src="socialIcon" alt="socials" />
-            <a href="sociallink">Social</a>
+            <i class="fa-brands fa-discord"></i>
+            <a href="https://discord.gg/Z7CeepuUPe" target="blank">
+              @cautionfun#3236
+            </a>
           </li>
         </ul>
       </div>
