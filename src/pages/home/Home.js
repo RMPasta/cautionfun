@@ -1,11 +1,12 @@
 import React from "react";
-import Footer from "./Footer.js";
+import Footer from "../../components/footer/Footer";
+import "./home.css";
 
 export default function Home() {
   return (
     <div className="App">
       <img
-        src={require("./images/yt-thumbnail.png")}
+        src={require("../../images/yt-thumbnail.png")}
         alt="cautionfun logo"
         className="caution-pic"
       />

@@ -1,5 +1,5 @@
 import React from "react";
-import Footer from "./Footer.js";
+import Footer from "../../components/footer/Footer";
 
 export default function Merch() {
   return (
