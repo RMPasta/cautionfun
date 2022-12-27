@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "./Footer.js";
 
 export default function Merch() {
   return (
@@ -12,6 +13,7 @@ export default function Merch() {
         </a>
       </div>
       <h1>Merch</h1>
+      <Footer />
     </div>
   );
 }
