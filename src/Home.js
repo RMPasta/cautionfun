@@ -4,9 +4,11 @@ import Footer from "./Footer.js";
 export default function Home() {
   return (
     <div className="App">
-      <img src={require("./images/yt-thumbnail.png")} alt="cautionfun logo" />
-
-      <h1>Cautionfun</h1>
+      <img
+        src={require("./images/yt-thumbnail.png")}
+        alt="cautionfun logo"
+        className="caution-pic"
+      />
 
       <div className="two-across">
         <a href="/merch" className="block merch">
