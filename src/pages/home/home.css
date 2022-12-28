@@ -124,7 +124,11 @@ nav
     font-size: 5rem;
   }
 
-
+  @media screen and (min-width: 1500px) {
+    .three-wide-lists {
+      width: 80%;
+    }
+  }
 
   @media screen and (max-width: 780px) {
     .ref-card {
@@ -136,10 +140,5 @@ nav
     }
     .socials-container {
       margin: 2rem 2rem 0 0;
-    }
-  }
-  @media screen and (min-width: 1500px) {
-    .three-wide-lists {
-      width: 80%;
     }
   }
