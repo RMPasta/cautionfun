@@ -17,6 +17,7 @@ nav
   .caution-pic-nav {
     height: 50px;
     justify-self: flex-start;
+    margin-left: 30px;
   }
   .nav-home {
   justify-self: flex-end;
@@ -24,8 +25,8 @@ nav
   margin: 4px 0;
   padding: 8px 15px;
   border-radius: 12px;
-  border: 1px solid #3e3e42;
-  filter: drop-shadow(.5px .5px 1px black);
+  border: 1px solid #1ccbe6;
+  filter: drop-shadow(.5px .5px 1px #1ccbe6);
   transition: background-color .8s;
   }
 
@@ -38,8 +39,8 @@ nav
     margin: 4px 20px;
     padding: 8px 15px;
     border-radius: 12px;
-    border: 1px solid #3e3e42;
-    filter: drop-shadow(.5px .5px 1px black);
+    border: 1px solid #1ccbe6;
+    filter: drop-shadow(.5px .5px 1px #1ccbe6);
     transition: background-color .8s;
   }
   .nav-merch:hover {
@@ -51,8 +52,8 @@ nav
     margin: 4px 20px;
     padding: 8px 15px;
     border-radius: 12px;
-    border: 1px solid #3e3e42;
-    filter: drop-shadow(.5px .5px 1px black);
+    border: 1px solid #1ccbe6;
+    filter: drop-shadow(.5px .5px 1px #1ccbe6);
     transition: background-color .8s;
   }
   .nav-ref:hover {
@@ -97,29 +98,29 @@ nav
     flex-wrap: wrap;
     justify-content: space-around;
     width: 100%;
-    margin: 1rem 0;
+    margin-top: 1rem;
   }
 
   .block {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid black;
+    border: 1px solid #1ccbe6;
     background-color: 	#3e3e42;
     height: 20rem;
     width: 30rem;
     border-radius: 10px;
-    filter: drop-shadow(4px 4px 10px black);
+    filter: drop-shadow(4px 4px 10px #1ccbe6);
     transition: background-color .8s;
   }
 
   .block:hover {
     background-color: #252526;
-    border: 1px solid #252526;
+    border: 1px solid #1ccbe6;
   }
 
   .block:active {
-    filter: drop-shadow(1px 1px 3px black);
+    filter: drop-shadow(1px 1px 3px #1ccbe6);
   }
 
   .merch {
