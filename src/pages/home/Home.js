@@ -1,6 +1,7 @@
 import React from "react";
 import Footer from "../../components/footer/Footer";
 import "./home.css";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
@@ -19,9 +20,9 @@ export default function Home() {
         >
           <div>Merch</div>
         </a>
-        <a href="/ref-links" className="block ref-links">
+        <Link to="/ref-links" className="block ref-links">
           <div>Ref Links</div>
-        </a>
+        </Link>
       </div>
       <Footer />
     </div>
