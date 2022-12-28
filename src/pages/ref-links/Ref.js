@@ -9,7 +9,11 @@ export default function Ref() {
         <a href="/" className="nav-home">
           <div>Home</div>
         </a>
-        <a href="/caution.square.site" target="blank" className="nav-ref">
+        <a
+          href="https://caution.square.site"
+          target="blank"
+          className="nav-ref"
+        >
           <div>Merch</div>
         </a>
       </div>
