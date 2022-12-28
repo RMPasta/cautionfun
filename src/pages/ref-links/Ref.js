@@ -6,6 +6,12 @@ export default function Ref() {
   return (
     <div className="body">
       <div className="nav">
+      <img
+        src={require("../../images/yt-thumbnail.png")}
+        alt="cautionfun logo"
+        className="caution-pic-nav"
+      />
+      <div className="nav-container">
         <a href="/" className="nav-home">
           <div>Home</div>
         </a>
@@ -16,6 +22,7 @@ export default function Ref() {
         >
           <div>Merch</div>
         </a>
+        </div>
       </div>
 
       <h1>Referral Links</h1>
