@@ -80,11 +80,16 @@ footer
       margin: 0 10px 10rem 0;
     }
     .socials-container {
-      margin: 2rem 2.4rem 0 0;
+      margin: 2rem 2rem 0 0;
+      width: 14rem;
+    }
+    .address-container {
+      margin-right: 20px;
     }
 
     .address {
-      margin: 10px 0;
+      margin: 10px;
+
     }
   }
 
