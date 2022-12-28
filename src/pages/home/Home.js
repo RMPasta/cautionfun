@@ -12,7 +12,11 @@ export default function Home() {
       />
 
       <div className="two-across">
-        <a href="/merch" className="block merch">
+        <a
+          href="https://cautionfun.square.site"
+          target="blank"
+          className="block merch"
+        >
           <div>Merch</div>
         </a>
         <a href="/ref-links" className="block ref-links">
