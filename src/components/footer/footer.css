@@ -13,6 +13,7 @@ footer
   .socials {
     display: flex;
     justify-content: space-around;
+    margin: 10rem 10px 5rem 0;
     margin-bottom: 5rem;
     margin-right: 10px;
   }
@@ -36,4 +37,10 @@ footer
   }
   .fa-discord {
     color: #7289da;
+  }
+
+  @media screen and (max-width: 760px) {
+    .socials {
+      margin: 0 10px 10rem 0;
+    }
   }
