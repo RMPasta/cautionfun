@@ -11,6 +11,11 @@ export default function Home() {
         alt="cautionfun logo"
         className="caution-pic"
       />
+      <img
+        src={require("../../images/lchammer.jpg")}
+        alt="lchammer quote"
+        className="lchammer"
+      />
 
       <div className="two-across">
         <a
