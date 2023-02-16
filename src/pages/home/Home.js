@@ -26,7 +26,7 @@ export default function Home() {
           <div>Merch</div>
         </a>
         <Link to="/ref-links" className="block ref-links">
-          <div>Ref Links</div>
+          <div class="ref-link-btn-text">Ref Links</div>
         </Link>
       </div>
       <Footer />

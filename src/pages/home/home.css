@@ -71,6 +71,15 @@ nav
     width: 210px;
     height: 210px;
   }
+
+  .lchammer {
+    border-radius: 15px;
+    filter: drop-shadow(3px 3px 4px #000);
+    margin-bottom: 20px;
+    width: 50%;
+    min-width: 500px;
+    max-width: 1000px;
+  }
   .body {
     display: flex;
     align-items: center;
@@ -105,6 +114,7 @@ nav
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     border: 1px solid #1ccbe6;
     background-color: 	#3e3e42;
     height: 20rem;
@@ -141,8 +151,18 @@ nav
     }
   }
 
-  @media screen and (max-width: 780px) {
+  @media screen and (max-width: 1000px) {
     .ref-card {
       height: auto;
+    }
+    .two-across {
+      width: 60%;
+      gap: 30px;
+    }
+    .block {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
     }
   }

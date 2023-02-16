@@ -5,6 +5,10 @@ footer
 
 */
 
+li:hover {
+  cursor: pointer;
+}
+
 .footer {
     width: 90%;
     font-size: 1.3rem;
@@ -20,6 +24,7 @@ footer
   .socials-container {
     display: flex;
     justify-content: center;
+    align-items: center;
     border: 1px solid #1ccbe6;
     border-radius: 10px;
     background-color: #3e3e42;
