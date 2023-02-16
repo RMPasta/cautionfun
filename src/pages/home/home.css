@@ -107,6 +107,7 @@ nav
     flex-wrap: wrap;
     justify-content: space-around;
     width: 100%;
+    max-width: 1800px;
     margin-top: 1rem;
   }
 
