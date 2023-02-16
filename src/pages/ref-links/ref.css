@@ -12,7 +12,6 @@ ref links
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 1800px;
   }
 
   .ref-card {
@@ -71,7 +70,7 @@ ref links
     filter: drop-shadow(0.1px 0.1px 1px #1ccbe6);
   }
 
-  @media screen and (max-width: 780px) {
+  @media screen and (max-width: 760px) {
     .ref-card {
       height: auto;
       margin-bottom: 10px;
@@ -84,6 +83,6 @@ ref links
   }
   @media screen and (min-width: 1500px) {
     .three-wide-lists {
-      width: 80%;
+      max-width: 1400px;
     }
   }

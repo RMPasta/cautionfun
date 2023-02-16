@@ -146,16 +146,7 @@ nav
     font-size: 5rem;
   }
 
-  @media screen and (min-width: 1500px) {
-    .three-wide-lists {
-      width: 80%;
-    }
-  }
-
   @media screen and (max-width: 1000px) {
-    .ref-card {
-      height: auto;
-    }
     .two-across {
       width: 60%;
       gap: 30px;
