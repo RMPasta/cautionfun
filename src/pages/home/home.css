@@ -74,11 +74,11 @@ nav
 
   .lchammer {
     border-radius: 15px;
-    filter: drop-shadow(3px 3px 4px #000);
+    filter: drop-shadow(1px 1px 2px #000);
     margin-bottom: 20px;
     width: 50%;
     min-width: 360px;
-    max-width: 1000px;
+    max-width: 600px;
   }
   .body {
     display: flex;
