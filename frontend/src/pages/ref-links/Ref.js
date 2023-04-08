@@ -5,26 +5,6 @@ import "./ref.css";
 export default function Ref() {
   return (
     <div className="body">
-      <div className="nav">
-      <img
-        src={require("../../images/yt-thumbnail.png")}
-        alt="cautionfun logo"
-        className="caution-pic-nav"
-      />
-      <div className="nav-container">
-        <a href="/" className="nav-home">
-          <div>Home</div>
-        </a>
-        <a
-          href="https://cautionfun.square.site"
-          target="blank"
-          className="nav-ref"
-        >
-          <div>Merch</div>
-        </a>
-        </div>
-      </div>
-
       <h1>Referral Links</h1>
       <div className="three-wide-lists">
         <></>

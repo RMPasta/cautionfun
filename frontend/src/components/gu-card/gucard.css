@@ -1,0 +1,29 @@
+.card-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 300px;
+    border-radius: 10px;
+    border: 1px solid #252526;
+    filter: drop-shadow(1px 1px 3px #252526);
+    margin: 0 auto;
+    padding: 10px;
+    transition: filter .8s;
+}
+
+.card-card:hover {
+    filter: drop-shadow(1px 2px 3px #000);
+}
+
+.card-img {
+    transition: filter .3s;
+}
+
+.card-img:hover {
+    filter: drop-shadow(4px 4px 10px #1ccbe6);
+}
+
+.card-info {
+    display: flex;
+    justify-content: space-around;
+}
