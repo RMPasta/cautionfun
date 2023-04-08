@@ -41,21 +41,6 @@ export default function Header() {
 getUserData();
 }, []);
 
-
-useEffect(() => {
-  supabase.auth.getSession().then(({ data: { session } }) => {
-    setSession(session)
-  })
-
-  const {
-    data: { subscription },
-  } = supabase.auth.onAuthStateChange((_event, session) => {
-    setSession(session)
-  })
-  if (session) navigate('/');
-  return () => subscription.unsubscribe()
-}, [])
-
   return (
     <div className="nav">
       <img
