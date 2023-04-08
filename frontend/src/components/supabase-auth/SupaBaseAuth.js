@@ -1,26 +1,30 @@
-import React, { Redirect } from "react";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { createClient } from "@supabase/supabase-js";
 import { Auth } from "@supabase/auth-ui-react";
+import { ThemeSupa } from '@supabase/auth-ui-shared';
+import './supabaseauth.css'
 
-export default function SupaBaseAuth() {
-  const supabase = createClient(
-    "https://ulcmvkngelimzcalrpza.supabase.co",
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVsY212a25nZWxpbXpjYWxycHphIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODA5NjU4NjgsImV4cCI6MTk5NjU0MTg2OH0.eSZhbvhODeqcs41VVVKf5xKGqwjd7x2s55RWaEC3fRM"
-  );
+export default function SupaBaseAuth(props) {
 
-  supabase.auth.onAuthStateChange(async (event) => {
-    if (event !== "SIGNED_OUT") {
-      // forward to success route
-      <Redirect to="/ref-links" />;
-    } else {
-      // forward home
-      <Redirect to="/" />;
-    }
-  });
+const supabase = createClient(
+process.env.REACT_APP_SUPABASE_URL,
+process.env.REACT_APP_ANON_KEY
+);
+const navigate = useNavigate();
+
+const signOutUser = async () => {
+    const { error } = await supabase.auth.signOut();
+    props.setShowMenu(false)
+    props.setUser("Sign In")
+    navigate('/')
+  }
 
   return (
     <div>
-      <Auth supabaseClient={supabase} theme="dark" providers={["discord"]} />
+        {props.user !== "Sign In" ?
+        <button onClick={(() => signOutUser())} className="signout-button" >Sign Out</button> :
+        <Auth supabaseClient={supabase} theme="dark" providers={["discord"]} appearance={{theme: ThemeSupa}} />}
     </div>
   );
 }
