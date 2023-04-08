@@ -1,0 +1,136 @@
+
+/*
+
+footer
+
+*/
+
+li:hover {
+  cursor: pointer;
+}
+
+.footer {
+    width: 90%;
+    font-size: 1.3rem;
+  }
+
+  .socials {
+    display: flex;
+    justify-content: space-around;
+    margin: 6rem 10px 5rem 0;
+    margin-bottom: 3rem;
+    margin-right: 10px;
+  }
+  .socials-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #1ccbe6;
+    border-radius: 10px;
+    background-color: #3e3e42;
+    filter: drop-shadow(1px 2px 4px #1ccbe6);
+    transition: background-color .8s;
+    padding: 1rem 1.5rem 1rem 1rem;
+  }
+  .socials-container:hover {
+    background-color: #252526;
+    border: 1px solid #252526;
+  }
+  li {
+    list-style: none;
+  }
+
+  .fa-brands {
+    font-size: 2rem;
+    margin-right: 5px;
+  }
+  .fa-twitter {
+    color: #00acee;
+  }
+  .fa-twitch {
+    color: #6441a5
+  }
+  .fa-discord {
+    color: #7289da;
+  }
+
+  .address-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 30px;
+    font-size: 1rem;
+  }
+
+  .address {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 10px 0 0;
+  }
+
+  .addy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .fa-clipboard-check {
+    font-size: 22px;
+    margin-left: 4px;
+  }
+
+  .fa-clipboard-check:hover {
+    cursor: pointer;
+  }
+
+  .fa-clipboard {
+    font-size: 22px;
+    margin-left: 4px;
+  }
+
+  .fa-clipboard:hover {
+    cursor: pointer;
+  }
+
+  .address > img {
+    height: 50px;
+    margin-right: 10px;
+  }
+
+  .donations {
+    margin: 2rem 1.5rem 0 0;
+  }
+
+
+  @media screen and (max-width: 760px) {
+    .socials {
+      margin: 0 10px 10rem 0;
+    }
+    .socials-container {
+      margin: 2rem 2rem 0 0;
+      width: 14rem;
+    }
+    .address-container {
+      margin-right: 20px;
+    }
+
+    .address {
+      margin: 10px;
+
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    .address-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-left: 30px;
+    }
+    .address {
+      margin: 10px 0;
+    }
+  }
