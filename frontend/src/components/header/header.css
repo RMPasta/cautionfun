@@ -8,15 +8,16 @@ nav
   padding: 5px;
   position: fixed;
   z-index: 2;
-  top: 80px;
+  top: 90px;
   right: 10px;
   transition: right 1s;
   background-color: #3e3e42;
   opacity: .95;
+  width: 220px;
 }
 
 .hidden {
-  right: -300px;
+  right: -400px;
 }
 
 .fa-user-circle {
