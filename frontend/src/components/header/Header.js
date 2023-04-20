@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import SupaBaseAuth from "../../components/supabase-auth/SupaBaseAuth";
 import { createClient } from "@supabase/supabase-js";
 import "./header.css";
@@ -7,8 +6,6 @@ import "./header.css";
 export default function Header() {
   const [showMenu, setShowMenu] = useState(false);
   const [user, setUser] = useState("Sign In");
-  const [session, setSession] = useState(null)
-  const navigate = useNavigate();
   const openMenu = () => {
     if (showMenu) return;
     setShowMenu(true);
@@ -39,7 +36,7 @@ export default function Header() {
     });
 };
 getUserData();
-}, []);
+}, [supabase.auth]);
 
   return (
     <div className="nav">
