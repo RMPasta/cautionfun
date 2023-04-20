@@ -70,31 +70,6 @@ li:hover {
     margin: 1rem 10px 0 0;
   }
 
-  .addy {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
-  }
-
-  .fa-clipboard-check {
-    font-size: 22px;
-    margin-left: 4px;
-  }
-
-  .fa-clipboard-check:hover {
-    cursor: pointer;
-  }
-
-  .fa-clipboard {
-    font-size: 22px;
-    margin-left: 4px;
-  }
-
-  .fa-clipboard:hover {
-    cursor: pointer;
-  }
-
   .address > img {
     height: 50px;
     margin-right: 10px;
