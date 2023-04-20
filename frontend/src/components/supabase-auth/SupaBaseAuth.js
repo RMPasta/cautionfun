@@ -14,7 +14,7 @@ process.env.REACT_APP_ANON_KEY
 const navigate = useNavigate();
 
 const signOutUser = async () => {
-    const { error } = await supabase.auth.signOut();
+    await supabase.auth.signOut();
     props.setShowMenu(false)
     props.setUser("Sign In")
     navigate('/')
