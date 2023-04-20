@@ -98,6 +98,9 @@
   }
 
   @media screen and (max-width: 500px) {
+    .two-across {
+      display: none;
+    }
     .block {
       height: 14rem;
     }

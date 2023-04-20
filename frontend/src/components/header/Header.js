@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from 'react-router-dom';
 import SupaBaseAuth from "../../components/supabase-auth/SupaBaseAuth";
 import { createClient } from "@supabase/supabase-js";
 import "./header.css";
@@ -49,22 +50,23 @@ getUserData();
       <div className={showMenu ? "login-modal" : "login-modal hidden"}>
         <SupaBaseAuth showMenu={showMenu} setShowMenu={setShowMenu} setUser={setUser} user={user}/>
       </div>
-        <a href="/" className="nav-button">
+        <Link to="/" className="nav-button">
           <div>Home</div>
-        </a>
-        <a href="/vault" className="nav-button">
+        </Link>
+        <Link to="/vault" className="nav-button">
           <div>Vault</div>
-        </a>
-        <a
-          href="https://cautionfun.square.site"
+        </Link>
+        <Link
+          to="https://cautionfun.square.site"
           target="blank"
           className="nav-button"
           >
           <div>Merch</div>
-        </a>
-        <a href="/ref-links" className="nav-button">
+        </Link>
+        <Link to="/ref-links" className="nav-button">
           <div>Ref Links</div>
-        </a>
+        </Link>
+
           { !showMenu && <button onClick={openMenu} className="nav-button">{user ? user : "Sign In"}</button> }
           { showMenu && <button onClick={closeMenu} className="nav-button">{user ? user : "Sign In"}</button> }
       </div>

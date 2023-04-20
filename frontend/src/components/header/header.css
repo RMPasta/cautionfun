@@ -28,11 +28,16 @@ nav
     width: 100%;
     display: flex;
     justify-content: space-between;
-    margin: 5px;
+    margin: 5px auto;
+    overflow: hidden;
   }
   .nav-container {
     display: flex;
+    justify-content: center;
+    /* width: 260px; */
+    /* flex-direction: column; */
     margin-right: 20px;
+    flex-wrap: wrap;
   }
   .caution-pic-nav {
     height: 50px;
@@ -41,8 +46,11 @@ nav
   }
   .nav-button {
   color: white;
-  text-align: center;
+  display: flex;
   justify-self: flex-end;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
   background-color: #3e3e42;
   margin: 4px 8px;
   padding: 8px 2px;
@@ -56,4 +64,13 @@ nav
   .nav-button:hover {
     background-color: #252526;
     border: 1px solid #252526;
+  }
+
+  @media screen and (max-width: 600px) {
+    .nav-button {
+      width: 100px;
+    }
+    .caution-pic-nav {
+      display: none;
+    }
   }
