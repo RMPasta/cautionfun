@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "../../components/footer/Footer";
 import "./ref.css";
 
 export default function Ref() {
@@ -125,7 +124,6 @@ export default function Ref() {
         </div>
         <></>
       </div>
-      <Footer />
     </div>
   );
 }

@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "../../components/footer/Footer";
 import "./home.css";
 import { Link } from "react-router-dom";
 
@@ -29,7 +28,7 @@ export default function Home() {
           <div className="ref-link-btn-text">Ref Links</div>
         </Link>
       </div>
-      <Footer />
+
     </div>
   );
 }

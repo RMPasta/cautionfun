@@ -4,6 +4,7 @@ import Home from "./pages/home/Home";
 import Vault from "./pages/vault/Vault";
 import { Route, Routes } from "react-router-dom";
 import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/ref-links" element={<Ref />} />
         <Route path="/vault" element={<Vault />} />
       </Routes>
+      <Footer />
     </>
   );
 }

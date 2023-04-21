@@ -21,6 +21,5 @@
 @media screen and (max-width: 600px) {
     .vault {
       grid-template-columns: 1fr;
-      height: 14rem;
     }
   }

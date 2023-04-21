@@ -35,13 +35,18 @@ export default function Vault() {
     };
     getCards();
   }, []);
+
+  const sortedByDeath = Object.values(cards).sort((a, b) => {
+    return a.metadata.god - b.metadata.god
+  })
+  console.log(cards)
   return (
     <div className="vault">
       {!isLoaded ? (
         <h1>...Loading</h1>
       ) : (
         cards &&
-        Object.values(cards).map((card) => (
+        sortedByDeath.map((card) => (
           <li key={card.image_url}>
             <GUCard
               imgUrl={card.image_url}
