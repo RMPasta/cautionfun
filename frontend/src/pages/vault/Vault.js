@@ -105,7 +105,7 @@ export default function Vault() {
     <div>
       <div className="filters">
         <div className="filter-box">
-          {["All", "neutral", "nature", "death", "war", "magic"].map((god) => (
+          {["All", "neutral", "nature", "death", "war", "magic", "deception"].map((god) => (
             <button
               key={god}
               onClick={() => handleGodFilterClick(god)}
@@ -131,7 +131,7 @@ export default function Vault() {
           ))}
         </div>
         <div className="filter-box">
-          {["All", "common", "rare", "epic", "legendary", "mythic"].map(
+          {["All", "common", "rare", "epic", "legendary"].map(
             (rarity) => (
               <button
                 key={rarity}
@@ -150,8 +150,6 @@ export default function Vault() {
             "All",
             "genesis",
             "etherbots",
-            "trial",
-            "core",
             "verdict",
             "wander",
             "wolf",
