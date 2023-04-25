@@ -1,0 +1,37 @@
+import json
+import requests
+
+def testrpc():
+    # Set up the RPC server connection settings
+    url = "http://127.0.0.1:18299"
+    username = "verusdesktop"
+    password = "hy4ta1owGydtKevfh0BLyRBe9tRoGIW0wZA_8zNbKFM"
+
+    # Construct the JSON-RPC request payload
+    payload = {
+        "jsonrpc": "1.0",
+        "id": "getnewaddress",
+        "method": "getnewaddress",
+        "params": [],
+    }
+
+    print('-----------> testrpc function <-----------')
+    # Send the HTTP request to the Verus RPC server
+    response = requests.post(
+        url,
+        headers={"Content-Type": "application/json"},
+        data=json.dumps(payload),
+        auth=requests.auth.HTTPBasicAuth(username, password),
+    )
+    print("------> got response<-------")
+    if response.status_code != 200:
+        print("Error: HTTP status code ", response.status_code)
+        print(response.text)
+    else:
+        # Parse the JSON response from the server
+        result = json.loads(response.text)
+        final = result['result']
+        print(final)
+        return {'final': final}
+
+print(testrpc())
