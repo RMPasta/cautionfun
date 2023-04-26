@@ -5,7 +5,7 @@ export default function VerusTest() {
 const [address, setAddress] = useState('');
 
   useEffect(() => {
-    axios.get('/newAddress')
+    axios.get('http://127.0.0.1:5000/')
       .then((response) => {
         setAddress(response.data);
       })
