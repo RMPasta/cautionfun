@@ -2,6 +2,7 @@ import "./App.css";
 import Ref from "./pages/ref-links/Ref";
 import Home from "./pages/home/Home";
 import Vault from "./pages/vault/Vault";
+import IMX from "./components/imx/IMX";
 import VerusTest from "./pages/verustest/VerusTest";
 import { Route, Routes } from "react-router-dom";
 import Header from "./components/header/Header";
@@ -16,6 +17,7 @@ function App() {
         <Route path="/ref-links" element={<Ref />} />
         <Route path="/vault" element={<Vault />} />
         <Route path="/verus" element={<VerusTest />} />
+        <Route path="/imx" element={<IMX />} />
       </Routes>
       <Footer />
     </>
