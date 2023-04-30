@@ -4,6 +4,7 @@ import './CC.css'
 
 export default function CC() {
 const [address, setAddress] = useState('');
+const [addressBalance, setAddressBalance] = useState('');
 const [price, setPrice] = useState('');
 const [supply, setSupply] = useState('');
 const [claims, setClaims] = useState('');
@@ -14,7 +15,7 @@ const [holders, setHolders] = useState('');
   useEffect(() => {
     axios.get('http://127.0.0.1:5000/getaddress')
       .then((response) => {
-        console.log(response)
+        // console.log(response)
         setAddress(response.data);
       })
       .catch((error) => {
@@ -23,9 +24,26 @@ const [holders, setHolders] = useState('');
   }, []);
 
   useEffect(() => {
+    setInterval(() => {
+      console.log("checking new wallet balance again...", addressBalance)
+      if (addressBalance >= 0.7) {
+        clearInterval()
+      }
+      axios.post('http://127.0.0.1:5000/checkaddress', { data: address})
+        .then((response) => {
+          // console.log(response)
+          setAddressBalance(response.data)
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }, [600000])
+  }, [address, addressBalance]);
+
+  useEffect(() => {
     axios.get('http://127.0.0.1:5000/price')
       .then((response) => {
-        console.log(response)
+        // console.log(response)
         setPrice(response.data);
       })
       .catch((error) => {
@@ -57,6 +75,7 @@ const [holders, setHolders] = useState('');
   return (
     <div className='cautioncoin'>
       <p>{address ? address : "No new address"}</p>
+      <p>{addressBalance >= .7 ? "Thank you! Processing rental..." : `Balance ${addressBalance.toString()}/0.7$CC (will check balance once every minute...)`}</p>
       <h1 className='cc-header'>CautionCoin Status</h1>
       <div className='economics'>
         <h2 className='economics-header'>Economics:</h2>

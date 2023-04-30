@@ -29,5 +29,5 @@ def ccinfo():
         # Parse the JSON response from the server
         result = json.loads(response.text)
         final = result['result']['bestcurrencystate']['supply']
-        print(final)
+        # print(final)
         return final

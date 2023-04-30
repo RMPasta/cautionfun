@@ -32,5 +32,5 @@ def price():
         verus = result['result']['estimatedcurrencystate']['currencies']['iJhCezBExJHvtyH3fGhNnt2NhU4Ztkf2yq']['viaconversionprice']
         cc = result['result']['estimatedcurrencystate']['currencies']['iAPgLHjmWZBA4wpfesNT81vMjSoTacgwuU']['viaconversionprice']
         final = verus / cc
-        print(final)
+        # print(final)
         return final

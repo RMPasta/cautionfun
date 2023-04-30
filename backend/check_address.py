@@ -1,7 +1,7 @@
 import json
 import requests
 
-def testrpc():
+def check_new_address():
     # Set up the RPC server connection settings
     # url = "http://192.168.1.156:18299"
     # password = "g52bCKWjB19Joe6TwDwBvCea7yqWUt4ozpJKNlIKxfM"
@@ -12,17 +12,14 @@ def testrpc():
     url = "http://3.80.122.208:80/"
     password = "pass0f10a612e92173c85ec9703822ca3f34280977ee1116c6a9f3ca85a9a1a7a378d6"
     username = "user2440744724"
-
-
     # Construct the JSON-RPC request payload
     payload = {
         "jsonrpc": "1.0",
-        "id": "getnewaddress",
-        "method": "getnewaddress",
-        "params": [],
+        "id": "getaddressbalance",
+        "method": "getaddressbalance",
+        "params": ['{"addresses":["RPPWgTmjgw3qv2XcrAcmA3fvQ2mZnum5xU"]}'],
     }
 
-    print('-----------> testrpc function <-----------')
     # Send the HTTP request to the Verus RPC server
     response = requests.post(
         url,
@@ -38,6 +35,7 @@ def testrpc():
     else:
         # Parse the JSON response from the server
         result = json.loads(response.text)
-        address = result['result']
         print(result)
-        return address
+        balance = result['result']['balance']
+        return balance
+print(check_new_address())
