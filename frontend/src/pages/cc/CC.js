@@ -3,7 +3,7 @@ import axios from 'axios'
 import './CC.css'
 
 export default function CC() {
-// const [address, setAddress] = useState('');
+const [address, setAddress] = useState('');
 const [price, setPrice] = useState('');
 const [supply, setSupply] = useState('');
 const [claims, setClaims] = useState('');
@@ -11,22 +11,21 @@ const [reserves, setReserves] = useState('');
 const [ccIds, setCcIds] = useState('');
 const [holders, setHolders] = useState('');
 
-  // useEffect(() => {
-  //   axios.get('http://127.0.0.1:5000/')
-  //     .then((response) => {
-  //       console.log(response)
-  //       setAddress(response.data);
-  //     })
-  //     .catch((error) => {
-  //       console.error(error);
-  //     });
-  // }, []);
-  // console.log(address)
+  useEffect(() => {
+    axios.get('http://127.0.0.1:5000/getaddress')
+      .then((response) => {
+        console.log(response)
+        setAddress(response.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
 
   useEffect(() => {
     axios.get('http://127.0.0.1:5000/price')
       .then((response) => {
-        // console.log(response)
+        console.log(response)
         setPrice(response.data);
       })
       .catch((error) => {
@@ -57,6 +56,7 @@ const [holders, setHolders] = useState('');
   }, []);
   return (
     <div className='cautioncoin'>
+      <p>{address ? address : "No new address"}</p>
       <h1 className='cc-header'>CautionCoin Status</h1>
       <div className='economics'>
         <h2 className='economics-header'>Economics:</h2>
@@ -71,7 +71,7 @@ const [holders, setHolders] = useState('');
         {/* <p>Top CC Holders: {holders ? holders : "...Loading"}</p> */}
         <div>
         <p>Top CC Holders: </p>
-        {[1, 2, 3, 4, 5].map(holder => <p>Tokens: {holder} --- Discord Tag: User{holder}</p>).reverse()}
+        {[1, 2, 3, 4, 5].map(holder => <p key={holder}>Tokens: {holder} --- Discord Tag: User{holder}</p>).reverse()}
         </div>
       </div>
     </div>
