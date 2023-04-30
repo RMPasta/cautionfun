@@ -1,0 +1,18 @@
+import { ImmutableXClient } from '@imtbl/imx-sdk'
+
+export async function libExample() {
+  const client = await ImmutableXClient.build({
+    publicApiUrl: 'https://api.sandbox.x.immutable.com/v1',
+  })
+  const address = localStorage.getItem('address')
+
+  if (address) {
+    const balances = await client.getBalances({ user: address })
+    const orders = await client.getOrders()
+    const order = await client.getOrder({ orderId: 1 })
+    const assets = await client.getAssets({
+      user: address,
+    })
+    console.log("balances: ", balances, " orders: ", orders, " order: ", order, " assets: ", assets)
+  }
+}

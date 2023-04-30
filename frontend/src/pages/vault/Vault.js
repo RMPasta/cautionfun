@@ -100,7 +100,6 @@ export default function Vault() {
     }
   }
 
-  console.log(filtered);
   return (
     <div>
       <div className="filters">
@@ -168,7 +167,7 @@ export default function Vault() {
       </div>
       <div className="vault">
         {!isLoaded ? (
-          <h1>...Loading</h1>
+          <h2>...Loading</h2>
         ) : filtered.length > 0 ? (
           cards &&
           filtered.map((card) => (
