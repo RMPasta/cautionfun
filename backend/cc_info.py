@@ -2,7 +2,7 @@ import json
 import requests
 
 def ccinfo():
-    url = "http://3.80.122.208:80/"
+    url = "http://3.90.45.83/"
     username = "user2440744724"
     password = "pass0f10a612e92173c85ec9703822ca3f34280977ee1116c6a9f3ca85a9a1a7a378d6"
 

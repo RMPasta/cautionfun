@@ -1,7 +1,12 @@
 import json
 import requests
+import os
+# from dotenv import load_dotenv
 
-def check_new_address():
+def check_new_address(address):
+    # load_dotenv()
+    # var = os.getenv("REMOTE_VERUS_SERVER")
+    # print(var)
     # Set up the RPC server connection settings
     # url = "http://192.168.1.156:18299"
     # password = "g52bCKWjB19Joe6TwDwBvCea7yqWUt4ozpJKNlIKxfM"
@@ -9,7 +14,7 @@ def check_new_address():
     # url = "http://127.0.0.1:18299"
     # password = "hy4ta1owGydtKevfh0BLyRBe9tRoGIW0wZA_8zNbKFM"
 
-    url = "http://3.80.122.208:80/"
+    url = "http://3.90.45.83/"
     password = "pass0f10a612e92173c85ec9703822ca3f34280977ee1116c6a9f3ca85a9a1a7a378d6"
     username = "user2440744724"
     # Construct the JSON-RPC request payload
@@ -17,7 +22,8 @@ def check_new_address():
         "jsonrpc": "1.0",
         "id": "getaddressbalance",
         "method": "getaddressbalance",
-        "params": ['{"addresses":["RPPWgTmjgw3qv2XcrAcmA3fvQ2mZnum5xU"]}'],
+        # "params": json.loads('{"addresses": ["{address}"]}'.format(address=address)),
+        "params": [{"addresses": [address]}],
     }
 
     # Send the HTTP request to the Verus RPC server
@@ -36,6 +42,10 @@ def check_new_address():
         # Parse the JSON response from the server
         result = json.loads(response.text)
         print(result)
-        balance = result['result']['balance']
-        return balance
-print(check_new_address())
+        print(address)
+        if not result['error']:
+            balance = result['result']['balance']
+            return balance
+        else:
+            print("problem checking address...")
+            return "oops"

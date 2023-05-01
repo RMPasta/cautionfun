@@ -12,14 +12,18 @@ CORS(app, origins=['http://localhost:3000'])
 @app.route('/getaddress')
 def getaddress():
     data = get_address()
-    return str(data / 100000000)
+    return str(data)
 
 @app.route('/checkaddress', methods=["POST"])
 def checkaddress():
     response = request.get_json()
-    print(response)
-    data = check_new_address()
-    return str(data)
+    address = response['data']
+    data = check_new_address(address)
+    if data != "oops":
+        balance = int(data) / 100000000
+        return str(balance)
+    else:
+        return "0"
 
 @app.route('/price')
 def getprice():

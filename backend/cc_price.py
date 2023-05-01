@@ -1,9 +1,11 @@
 import json
 import requests
+import os
 
 def price():
+    print(os.environ.get('REMOTE_VERUS_SERVER'))
     # Set up the RPC server connection settings
-    url = "http://3.80.122.208:80/"
+    url = "http://3.90.45.83/"
     username = "user2440744724"
     password = "pass0f10a612e92173c85ec9703822ca3f34280977ee1116c6a9f3ca85a9a1a7a378d6"
 
@@ -22,7 +24,6 @@ def price():
         data=json.dumps(payload),
         auth=requests.auth.HTTPBasicAuth(username, password),
     )
-
     if response.status_code != 200:
         print("Error: HTTP status code ", response.status_code)
         print(response.text)
@@ -34,3 +35,4 @@ def price():
         final = verus / cc
         # print(final)
         return final
+print(price())
