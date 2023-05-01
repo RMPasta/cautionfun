@@ -4,19 +4,11 @@ import os
 # from dotenv import load_dotenv
 
 def check_new_address(address):
-    # load_dotenv()
-    # var = os.getenv("REMOTE_VERUS_SERVER")
-    # print(var)
-    # Set up the RPC server connection settings
-    # url = "http://192.168.1.156:18299"
-    # password = "g52bCKWjB19Joe6TwDwBvCea7yqWUt4ozpJKNlIKxfM"
 
-    # url = "http://127.0.0.1:18299"
-    # password = "hy4ta1owGydtKevfh0BLyRBe9tRoGIW0wZA_8zNbKFM"
+    url = os.environ.get('REMOTE_VERUS_SERVER_URL')
+    username = os.environ.get('REMOTE_VERUS_SERVER_UN')
+    password = os.environ.get('REMOTE_VERUS_SERVER_PASS')
 
-    url = "http://3.90.45.83/"
-    password = "pass0f10a612e92173c85ec9703822ca3f34280977ee1116c6a9f3ca85a9a1a7a378d6"
-    username = "user2440744724"
     # Construct the JSON-RPC request payload
     payload = {
         "jsonrpc": "1.0",
