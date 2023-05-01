@@ -5,6 +5,9 @@ def ccinfo():
     url = "http://3.90.45.83/"
     username = "user2440744724"
     password = "pass0f10a612e92173c85ec9703822ca3f34280977ee1116c6a9f3ca85a9a1a7a378d6"
+    # url = "http://127.0.0.1:18299"
+    # password = "hy4ta1owGydtKevfh0BLyRBe9tRoGIW0wZA_8zNbKFM"
+    # username = "verusdesktop"
 
     # Construct the JSON-RPC request payload
     payload = {
@@ -31,3 +34,5 @@ def ccinfo():
         final = result['result']['bestcurrencystate']['supply']
         # print(final)
         return final
+
+print(ccinfo())
