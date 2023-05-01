@@ -32,5 +32,3 @@ def ccinfo():
         final = result['result']['bestcurrencystate']['supply']
         # print(final)
         return final
-
-print(ccinfo())

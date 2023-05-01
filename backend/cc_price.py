@@ -36,4 +36,3 @@ def price():
         final = verus / cc
         # print(final)
         return final
-print(price())

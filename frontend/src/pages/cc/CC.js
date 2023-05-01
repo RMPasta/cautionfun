@@ -80,7 +80,7 @@ const [holders, setHolders] = useState('');
   return (
     <div className='cautioncoin'>
       <p>{address ? address : "No new address"}</p>
-      <p>{addressBalance >= .7 ? "Thank you! Processing rental..." : `Balance ${addressBalance.toString()}/0.7$CC (will check balance once every 45 seconds...)`}</p>
+      <p>{addressBalance >= .7 ? "Thank you! Processing rental..." : `Balance ${addressBalance.toString()}/0.7$CC (will check balance once every 30 seconds...)`}</p>
       <h1 className='cc-header'>CautionCoin Status</h1>
       <div className='economics'>
         <h2 className='economics-header'>Economics:</h2>
