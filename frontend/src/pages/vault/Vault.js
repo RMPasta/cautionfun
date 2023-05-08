@@ -100,7 +100,6 @@ export default function Vault() {
     }
   }
 
-  console.log(filtered);
   return (
     <div>
       <div className="filters">

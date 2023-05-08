@@ -24,7 +24,7 @@ const signOutUser = async () => {
     <div>
         {props.user !== "Sign In" ?
         <button onClick={(() => signOutUser())} className="signout-button" >Sign Out</button> :
-        <Auth supabaseClient={supabase} theme="dark" providers={["discord"]} appearance={{theme: ThemeSupa}} />}
+        <Auth supabaseClient={supabase} theme="dark" providers={["discord, email"]} appearance={{theme: ThemeSupa}} />}
     </div>
   );
 }
