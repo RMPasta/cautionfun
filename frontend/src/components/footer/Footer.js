@@ -76,6 +76,7 @@ export default function Footer() {
           />
           <div className="addy">VRSC: <p id="vrsc-addy">RGabSv4JLkvUeQQbCFED18gDDLGU8STrbs</p><i className="fa-solid fa-clipboard vrsc" onClick={() => copyElementText("vrsc-addy", "vrsc")}></i></div>
         </div>
+      <div className="bonk-tag">site by bonk</div>
       </div>
     </div>
   );

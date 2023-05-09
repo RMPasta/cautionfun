@@ -30,6 +30,7 @@ nav
     justify-content: space-between;
     align-items: center;
     margin: 5px auto;
+    padding: 0 60px;
     overflow: hidden;
   }
   .nav-container {
@@ -50,7 +51,7 @@ nav
   text-align: center;
   justify-content: center;
   background-color: #3e3e42;
-  margin: 4px 8px;
+  margin: 4px 2px;
   padding: 8px 2px;
   border-radius: 12px;
   width: 90px;
@@ -64,7 +65,7 @@ nav
     border: 1px solid #252526;
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 700px) {
     .nav-button {
       width: 100px;
     }

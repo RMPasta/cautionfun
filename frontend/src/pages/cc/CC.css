@@ -1,45 +1,53 @@
 .cautioncoin {
     display: flex;
     flex-direction: column;
-    margin: 50px;
-    padding: 0 50px 50px 50px;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
 }
 
-.cc-header {
-    padding-bottom: 50px;
-    margin-bottom: 30px;
-    border-bottom: 1px solid #4c8d97;
+.cautionh1 {
+    font-size: 90px;
+    margin: 20px;
 }
 
-.economics {
-    display: flex;
-    flex-direction: column;
-    justify-content : center;
-    gap: 4px;
-    /* padding-bottom: 60px; */
-    margin: 20px 0;
-    /* border-bottom: 1px solid grey; */
+.cautionh2 {
+    font-size: 38px;
 }
 
-.economics-header {
-    padding-bottom: 40px;
-    margin-bottom: 30px;
-    border-bottom: 1px solid #4c8d97;
-    /* border-bottom: 1px solid #1ccbe6; */
+.text-block-1 {
+    width: 800px;
 }
 
-.general-info {
-    display: flex;
-    flex-direction: column;
-    justify-content : center;
-    gap: 4px;
-    padding: 30px 0;
-    margin-bottom: 30px;
+.text-block-2 {
+    width: 800px;
 }
 
-.info-header {
-    padding-bottom: 40px;
-    margin-bottom: 30px;
-    border-bottom: 1px solid #4c8d97;
-    /* border-bottom: 1px solid #1ccbe6; */
+.a-tag {
+    color: #7eecff;
+    text-decoration: underline;
+    transition: color 1s;
 }
+
+.a-tag:hover {
+    color: #24bed6;
+    text-decoration: underline;
+}
+@media screen and (max-width: 760px) {
+    .cautioncoin {
+        width: 500px;
+        margin: 0 auto;
+    }
+    .cautionh1 {
+        font-size: 40px;
+    }
+    .cautionh2 {
+        font-size: 20px;
+    }
+    .text-block-1 {
+        width: 400px;
+    }
+    .text-block-2 {
+        width: 400px;
+    }
+  }
