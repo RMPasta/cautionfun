@@ -5,6 +5,7 @@ import Vault from "./pages/vault/Vault";
 import { Route, Routes } from "react-router-dom";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
+import CC from "./pages/cc/CC";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/ref-links" element={<Ref />} />
         <Route path="/vault" element={<Vault />} />
+        <Route path="/cc" element={<CC />} />
       </Routes>
       <Footer />
     </>
