@@ -54,12 +54,6 @@ export default function Ref() {
                 Ref Link
               </a>
             </div>
-            <h3>Coinbase</h3>
-            <div className="ref-button">
-              <a href="https://www.coinbase.com/join/mcgowa_wc" target="blank">
-                Ref Link
-              </a>
-            </div>
             <h3>Safe Trade</h3>
             <div className="ref-button">
               <a
