@@ -180,7 +180,10 @@ export default function Vault() {
             </li>
           ))
         ) : (
-          <div className="nothing-filtered">Nothing to see here!</div>
+          <div className="nothing-filtered">
+            <div className="nothing-filtered">Nothing to see here!</div>
+            <div className="nothing-filtered-small">Try a different combination of filters</div>
+          </div>
         )}
       </div>
     </div>

@@ -1,0 +1,53 @@
+.cautioncoin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+
+.cautionh1 {
+    font-size: 90px;
+    margin: 20px;
+}
+
+.cautionh2 {
+    font-size: 38px;
+}
+
+.text-block-1 {
+    width: 800px;
+}
+
+.text-block-2 {
+    width: 800px;
+}
+
+.a-tag {
+    color: #7eecff;
+    text-decoration: underline;
+    transition: color 1s;
+}
+
+.a-tag:hover {
+    color: #24bed6;
+    text-decoration: underline;
+}
+@media screen and (max-width: 760px) {
+    .cautioncoin {
+        width: 500px;
+        margin: 0 auto;
+    }
+    .cautionh1 {
+        font-size: 40px;
+    }
+    .cautionh2 {
+        font-size: 20px;
+    }
+    .text-block-1 {
+        width: 400px;
+    }
+    .text-block-2 {
+        width: 400px;
+    }
+  }

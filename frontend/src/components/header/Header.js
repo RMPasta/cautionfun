@@ -56,15 +56,18 @@ getUserData();
         <Link to="/vault" className="nav-button">
           <div>Vault</div>
         </Link>
+        <Link to="/cc" className="nav-button">
+          <div>$CC</div>
+        </Link>
+        <Link to="/ref-links" className="nav-button">
+          <div>Ref Links</div>
+        </Link>
         <Link
           to="https://cautionfun.square.site"
           target="blank"
           className="nav-button"
           >
           <div>Merch</div>
-        </Link>
-        <Link to="/ref-links" className="nav-button">
-          <div>Ref Links</div>
         </Link>
 
           { !showMenu && <button onClick={openMenu} className="nav-button">{user ? user : "Sign In"}</button> }

@@ -29,6 +29,12 @@
     margin: 40px auto;
 }
 
+.nothing-filtered-small {
+    grid-column: span 4;
+    font-size: 28px;
+    margin: 40px auto;
+}
+
 .current-filter {
     border: #1ccbe6;
     box-shadow: 1px 1px 9px 5px #1ccbe6;
