@@ -35,19 +35,42 @@
 }
 @media screen and (max-width: 760px) {
     .cautioncoin {
-        width: 500px;
+        width: 350px;
         margin: 0 auto;
+        font-size: 16px;
     }
     .cautionh1 {
         font-size: 40px;
     }
     .cautionh2 {
-        font-size: 20px;
+        font-size: 22px;
+        text-align: center;
     }
     .text-block-1 {
-        width: 400px;
+        width: 310px;
     }
     .text-block-2 {
-        width: 400px;
+        width: 300px;
+    }
+  }
+
+@media screen and (max-width: 350px) {
+    .cautioncoin {
+        width: 300px;
+        margin: 0 auto;
+        font-size: 12px;
+    }
+    .cautionh1 {
+        font-size: 30px;
+    }
+    .cautionh2 {
+        font-size: 18px;
+        text-align: center;
+    }
+    .text-block-1 {
+        width: 220px;
+    }
+    .text-block-2 {
+        width: 220px;
     }
   }
