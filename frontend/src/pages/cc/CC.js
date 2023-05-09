@@ -11,8 +11,7 @@ export default function CC() {
       <div className='text-block-1'>
       <p>CautionCoin is a social token designed to reward our most supportive community members, incentivize participation, and return value to our ecosystem.</p>
       <p>CautionCoin is built on the Verus blockchain, a secure, scalable, and permissionless platform that provides a foundation for the creation of social tokens with true underlying value.</p>
-      <p>Unlike most social tokens, CautionCoin will launch with inherent value that does not depend upon the efforts or actions of the creator. And as the ecosystem scales, clear paths to increase</p>
-      <p>the system's inherent value are defined, and value is not limited by time and energy. The potential future utility of CautionCoin is limited only by our collective imaginations.</p>
+      <p>Unlike most social tokens, CautionCoin will launch with inherent value that does not depend upon the efforts or actions of the creator. And as the ecosystem scales, clear paths to increase the system's inherent value are defined, and value is not limited by time and energy. The potential future utility of CautionCoin is limited only by our collective imaginations.</p>
       <p>I’d like to invite you to join the community and help shape the future of CautionCoin.</p>
       <p>Launching June 9th.</p>
       </div>
