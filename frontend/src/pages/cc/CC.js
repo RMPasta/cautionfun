@@ -22,7 +22,7 @@ export default function CC() {
       <p>-Back up your wallet: <a className='a-tag' target="blank" href="https://wiki.verus.io/#!how-to/how-to_backup_my_wallet.md">https://wiki.verus.io/#!how-to/how-to_backup_my_wallet.md</a></p>
       <p>Join the <a className='a-tag' target="blank" href="https://discord.gg/2cKPdAkUCq">TeamStreamTeam discord</a></p>
       <p>Follow me on <a className='a-tag' target="blank" href="https://twitch.tv/cautionfun_gu">Twitch</a></p>
-      <p>And <a className='a-tag' target="blank" href="https://twitter.com/cautionfun_gu">Twitter</a></p>
+      <p>And <a className='a-tag' target="blank" href="https://twitter.com/cautionfun_">Twitter</a></p>
       </div>
     </div>
   );
