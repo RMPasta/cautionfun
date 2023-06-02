@@ -33,6 +33,30 @@
     color: #24bed6;
     text-decoration: underline;
 }
+
+.whitepaper-button {
+    color: white;
+  display: flex;
+  justify-self: flex-end;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  background-color: #3e3e42;
+  margin: 4px 2px;
+  padding: 8px 2px;
+  border-radius: 12px;
+  width: 140px;
+  border: 1px solid #1ccbe6;
+  filter: drop-shadow(.5px .5px 1px #1ccbe6);
+  transition: background-color .8s;
+}
+
+.whitepaper-button:hover {
+    background-color: #252526;
+    border: 1px solid #252526;
+  }
+
+
 @media screen and (max-width: 760px) {
     .cautioncoin {
         width: 350px;

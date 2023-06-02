@@ -1,6 +1,7 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './CC.css';
 
-import './CC.css'
 
 export default function CC() {
 
@@ -15,6 +16,9 @@ export default function CC() {
       <p>I’d like to invite you to join the community and help shape the future of CautionCoin.</p>
       <p>Launching June 9th.</p>
       </div>
+      <Link to="/cc/whitepaper" className="whitepaper-button">
+          <div>WHITEPAPER</div>
+      </Link>
       <h2 className='cautionh2'>How to prepare:</h2>
       <div className='text-block-2'>
       <p>Download a Verus wallet from <a className='a-tag' target="blank" href="https://verus.io/wallet">https://verus.io/wallet</a></p>
