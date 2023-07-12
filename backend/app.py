@@ -6,13 +6,18 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from flask_migrate import Migrate
 from models import User
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 app.register_blueprint(user_routes, url_prefix='/user')
+app.register_blueprint(cc_routes, url_prefix='/cc')
 
 migrate = Migrate(app, db)
 
-DISCORD_CLIENT_ID = '1094275757397786804'
-DISCORD_CLIENT_SECRET = 'z7xi9OmHk3RKooafDacs_67imzwrYUwp'
+DISCORD_CLIENT_ID = os.environ.get('DISCORD_CLIENT_ID')
+DISCORD_CLIENT_SECRET = os.environ.get('DISCORD_CLIENT_SECRET')
 
 
 @app.route('/auth/discord/callback')
