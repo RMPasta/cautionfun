@@ -1,15 +1,15 @@
-from extensions import app
+from extensions import app, db
 from api.user_routes import user_routes
+from api.cc_routes import cc_routes
 from flask import Flask, render_template, request, url_for, redirect
 from flask_sqlalchemy import SQLAlchemy
-# from cc_price import price
-# from cc_info import ccinfo
-# from cc_claims import claimsleft
-# from testrpc import testrpc
 from flask_cors import CORS
+from flask_migrate import Migrate
 from models import User
 
 app.register_blueprint(user_routes, url_prefix='/user')
+
+migrate = Migrate(app, db)
 
 DISCORD_CLIENT_ID = '1094275757397786804'
 DISCORD_CLIENT_SECRET = 'z7xi9OmHk3RKooafDacs_67imzwrYUwp'
@@ -52,23 +52,3 @@ def discord_callback():
 def landing():
     users = User.query.all()
     return {'users': [user.to_dict() for user in users]}
-
-# @app.route('/getaddress')
-# def getaddress():
-#     data = testrpc()
-#     return str(data)
-
-# @app.route('/price')
-# def getprice():
-#     data = price()
-#     return str(data)
-
-# @app.route('/ccinfo')
-# def getccinfo():
-#     data = ccinfo()
-#     return str(data)
-
-# @app.route('/claimsleft')
-# def getclaimleft():
-#     data = claimsleft()
-#     return str(data)

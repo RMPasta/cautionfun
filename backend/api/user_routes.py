@@ -1,12 +1,19 @@
-from flask import Blueprint, request
+from flask import Blueprint, request, abort
 from models.user import User
 from extensions import db
 
 user_routes = Blueprint('user_routes', __name__)
 
+API_KEY = 'zz-top'
+
 # /user/update/USERID
 @user_routes.route('/update/<int:id>', methods=['PUT'])
 def update_user(id):
+    api_key = request.headers.get('X-API-Key')  # Retrieve the API key from the request headers
+
+    if api_key != API_KEY:
+        abort(401)  # Unauthorized access
+
     data = request.get_json(force=True)
     user = User.query.get(id)
 
@@ -38,5 +45,9 @@ def update_user(id):
 # /user/USERID
 @user_routes.route('/<int:id>', methods=['GET'])
 def get_user(id):
+    api_key = request.args.get('api_key')  # Retrieve the API key from the query parameters
+
+    if api_key != API_KEY:
+        abort(401)  # Unauthorized access
     user = User.query.get(id)
     return user.to_dict()
