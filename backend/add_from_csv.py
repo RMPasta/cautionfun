@@ -1,6 +1,6 @@
 import csv
 import os
-from app import app
+from extensions import app, db
 from models import User
 basedir = os.path.abspath(os.path.dirname(__file__))
 

@@ -1,3 +1,5 @@
+import os
+import requests
 from extensions import app, db
 from api.user_routes import user_routes
 from api.cc_routes import cc_routes
@@ -18,7 +20,7 @@ migrate = Migrate(app, db)
 
 DISCORD_CLIENT_ID = os.environ.get('DISCORD_CLIENT_ID')
 DISCORD_CLIENT_SECRET = os.environ.get('DISCORD_CLIENT_SECRET')
-
+DISCORD_REDIRECT_URI = 'http://127.0.0.1:5000/auth/discord/callback'
 
 @app.route('/auth/discord/callback')
 def discord_callback():
@@ -29,7 +31,7 @@ def discord_callback():
         'client_secret': DISCORD_CLIENT_SECRET,
         'grant_type': 'authorization_code',
         'code': code,
-        'redirect_uri': REDIRECT_URI,
+        'redirect_uri': DISCORD_REDIRECT_URI,
         'scope': 'identify'
     }
 
@@ -51,7 +53,6 @@ def discord_callback():
     # Do something with the user data (e.g., store it in the database)
 
     return redirect('/')  # Redirect back to the homepage
-
 
 @app.route('/')
 def landing():
