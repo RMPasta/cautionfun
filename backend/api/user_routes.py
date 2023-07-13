@@ -1,6 +1,6 @@
 from flask import Blueprint, request, abort
 from models.user import User
-from extensions import db
+from app import db
 
 user_routes = Blueprint('user_routes', __name__)
 

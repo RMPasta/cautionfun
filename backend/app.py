@@ -1,18 +1,23 @@
 import os
 import requests
-from extensions import app, db
-from api.user_routes import user_routes
-from api.cc_routes import cc_routes
 from flask import Flask, render_template, request, url_for, redirect
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from flask_migrate import Migrate
-from models import User
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
 load_dotenv()
 
+app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+db = SQLAlchemy(app)
+
+
+from api.user_routes import user_routes
+from api.cc_routes import cc_routes
 app.register_blueprint(user_routes, url_prefix='/user')
 app.register_blueprint(cc_routes, url_prefix='/cc')
 
@@ -53,8 +58,3 @@ def discord_callback():
     # Do something with the user data (e.g., store it in the database)
 
     return redirect('/')  # Redirect back to the homepage
-
-@app.route('/')
-def landing():
-    users = User.query.all()
-    return {'users': [user.to_dict() for user in users]}
