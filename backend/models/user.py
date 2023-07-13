@@ -3,15 +3,16 @@ from sqlalchemy.sql import func
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    twitch_id = db.Column(db.Integer)
+    twitch_id = db.Column(db.String)
     twitch_username = db.Column(db.String)
-    discord_id = db.Column(db.Integer)
+    discord_id = db.Column(db.String)
     discord_username = db.Column(db.String)
     verus = db.Column(db.String)
-    eth = db.Column(db.Integer)
-    rental = db.Column(db.Integer)
+    eth = db.Column(db.String)
+    rental = db.Column(db.String)
     points = db.Column(db.Integer)
     airdrop_amount = db.Column(db.Integer)
+    discord_verified = db.Column(db.Boolean, default=False)
     created_at = db.Column(db.DateTime(timezone=True),
                            server_default=func.now())
     bio = db.Column(db.Text)
@@ -28,6 +29,7 @@ class User(db.Model):
             'rental': self.rental,
             'points': self.points,
             'airdrop_amount': self.airdrop_amount,
+            'discord_verified': self.discord_verified,
             'created_at': self.created_at,
         }
 
