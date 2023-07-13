@@ -1,10 +1,11 @@
+import os
 from flask import Blueprint, request, abort
 from models.user import User
 from app import db
 
 user_routes = Blueprint('user_routes', __name__)
 
-API_KEY = 'zz-top'
+API_KEY = os.environ.get('API_KEY')
 
 # /user/update/USERID
 @user_routes.route('/update/<int:id>', methods=['PUT'])
