@@ -1,0 +1,5 @@
+{
+    "defaultProcessTypes": {
+      "web": "backend: gunicorn app:app"
+    }
+  }
