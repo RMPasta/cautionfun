@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
 import "./home.css";
-import { Link } from "react-router-dom";
 
 export default function Home() {
-
   return (
     <div className="App">
       <img
@@ -28,7 +27,6 @@ export default function Home() {
           <div className="ref-link-btn-text">Ref Links</div>
         </Link>
       </div>
-
     </div>
   );
 }

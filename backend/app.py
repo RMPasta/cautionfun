@@ -14,6 +14,7 @@ DATABASE_URL = os.environ.get('DATABASE_URL').replace("postgres://", "postgresql
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URL
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+CORS(app, origins=['http://localhost:3000'])
 
 db = SQLAlchemy(app)
 conn = psycopg2.connect(DATABASE_URL, sslmode='require')

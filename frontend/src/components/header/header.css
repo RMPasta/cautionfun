@@ -13,7 +13,7 @@ nav
   transition: right 1s;
   background-color: #3e3e42;
   opacity: .95;
-  width: 220px;
+  width: fit-content;
 }
 
 .hidden {
