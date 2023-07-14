@@ -1,7 +1,8 @@
 import jwt
 import os
 import requests
-from flask import Blueprint, request, abort, redirect, make_response, jsonify
+from flask import Blueprint, request, abort, redirect, make_response, jsonify, session
+from flask_login import LoginManager, login_user, logout_user, current_user
 from models.user import User
 from app import db
 from dotenv import load_dotenv
@@ -49,12 +50,18 @@ def discord_callback():
 
     if user:
         # User exists, generate a JWT
-        token_payload = {'user_id': user.id}
-        token = jwt.encode(token_payload, JWT_SECRET, algorithm='HS256')
+        # token_payload = {'user_id': user.id}
+        # token = jwt.encode(token_payload, JWT_SECRET, algorithm='HS256')
+        # response = make_response({"user": user.to_dict()})
+        # response.set_cookie('jwt_token', token, httponly=True, samesite='Strict')
 
-        response = make_response({"user": user.to_dict()})
-        response.set_cookie('jwt_token', token, httponly=True, secure=True, samesite='Strict')
-        return response
+        #failed attempt with session
+        # session["user_id"] = user.id
+        # print(session.keys(), session["user_id"])
+
+        login_user(user)
+
+        return {"user": user.to_dict()}
 
     # If user is not found or any other error occurs, return an appropriate response
     return jsonify({'error': 'User not found'})
@@ -62,7 +69,7 @@ def discord_callback():
 
 @auth_routes.route('/discord/cookie')
 def discord_cookie():
-    token = request.cookies.get('token')
+    token = request.cookies.get('jwt_token')
 
     if token:
         return token
@@ -71,6 +78,9 @@ def discord_cookie():
 @auth_routes.route('/logout', methods=['POST'])
 def logout():
     # Clear the JWT token from the client-side (e.g., remove it from local storage or set it to an expired value)
-    response = make_response({'message': 'Logout successful'})
-    response.delete_cookie('jwt_token')
-    return response
+    # response = make_response({'message': 'Logout successful'})
+    # response.delete_cookie('jwt_token')
+
+    logout_user()
+
+    return "oh yeah"

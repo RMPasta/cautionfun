@@ -4,6 +4,8 @@ from flask import Flask, render_template, request, url_for, redirect
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from flask_migrate import Migrate
+from flask_login import LoginManager, login_user, logout_user, current_user
+from flask_session import Session
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
@@ -14,10 +16,23 @@ DATABASE_URL = os.environ.get('DATABASE_URL').replace("postgres://", "postgresql
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URL
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-CORS(app, origins=['http://localhost:3000'])
+app.config['SESSION_TYPE'] = 'filesystem'
+app.config['SESSION_COOKIE_SAMESITE'] = 'None'
+app.config['SESSION_COOKIE_SECURE'] = True
+app.secret_key = os.environ.get('JWT_SECERET')
+CORS(app, origins=['http://localhost:3000', "http://127.0.0.1:5000"], supports_credentials=True)
+
+# Setup login manager
+login = LoginManager(app)
+login.login_view = 'auth.unauthorized'
+login.init_app(app)
+
+
+
 
 db = SQLAlchemy(app)
 conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+session = Session(app)
 
 
 from api.user_routes import user_routes
@@ -32,3 +47,8 @@ migrate = Migrate(app, db)
 @app.route('/')
 def landing():
     return "HELLO"
+
+from models import User
+@login.user_loader
+def load_user(id):
+    return User.query.get(int(id))

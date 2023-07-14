@@ -1,11 +1,15 @@
 import os
-from flask import Blueprint, request, abort
+import jwt
+from flask import Blueprint, request, abort, jsonify, session
+from flask_login import login_required, current_user
+from flask_cors import cross_origin
 from models.user import User
 from app import db
 
 user_routes = Blueprint('user_routes', __name__)
 
 API_KEY = os.environ.get('API_KEY')
+JWT_SECRET = os.environ.get('JWT_SECRET')
 
 # /user/update/USERID
 @user_routes.route('/update/<int:id>', methods=['PUT'])
@@ -52,3 +56,23 @@ def get_user(id):
         abort(401)  # Unauthorized access
     user = User.query.get(id)
     return user.to_dict()
+
+
+@user_routes.route('/info', methods=['GET'])
+@login_required
+def user_info():
+    # Retrieve the user_id from the session
+    # print(session.keys())
+    # user_id = session.get('user_id')
+    # print("USER ID GET INFO ROUTE ", user_id)
+
+    # if user_id:
+    #     # Retrieve the user from the database based on the user_id
+    #     user = User.query.get(user_id)
+
+    #     # Return the user information as a response
+    #     return user.to_dict()
+    # else:
+    #     return jsonify({'error': 'User not logged in'})
+
+    return current_user.to_dict()
