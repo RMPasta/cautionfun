@@ -58,9 +58,12 @@ def get_user(id):
     return user.to_dict()
 
 
-@user_routes.route('/info', methods=['GET'])
-@login_required
-def user_info():
+# @user_routes.route('/info', methods=['GET'])
+# @login_required
+# def user_info():
+#     print("wooooohooooo")
+#     return "logged in"
+    # return current_user.to_dict()
     # Retrieve the user_id from the session
     # print(session.keys())
     # user_id = session.get('user_id')
@@ -74,5 +77,3 @@ def user_info():
     #     return user.to_dict()
     # else:
     #     return jsonify({'error': 'User not logged in'})
-
-    return current_user.to_dict()

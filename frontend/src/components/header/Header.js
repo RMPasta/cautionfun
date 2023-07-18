@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./header.css";
+import axios from "axios";
 
 export default function Header() {
   const [showMenu, setShowMenu] = useState(false);
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(
+    localStorage.getItem("isLoggedIn") === "true" ? true : false
+  );
   const [user, setUser] = useState({});
   const [signInButton, setSignInButton] = useState("Sign In");
   const location = useLocation();
@@ -13,8 +16,8 @@ export default function Header() {
     const searchParams = new URLSearchParams(location.search);
     const code = searchParams.get("code");
 
-    if (code) {
-      const getUser = async () => {
+    if (code && loggedIn === false) {
+      const logInUser = async () => {
         if (loggedIn) return;
         const response = await fetch(
           `http://127.0.0.1:5000/auth/discord/callback?code=${code}`
@@ -23,12 +26,38 @@ export default function Header() {
           const data = await response.json();
           setUser(data.user);
           setLoggedIn(true);
-          localStorage.setItem("token", data.token);
+          localStorage.setItem("isLoggedIn", "true");
         }
       };
-      getUser();
+      logInUser();
     }
-  }, [location]);
+  }, []);
+
+  // useEffect(() => {
+  //   const getUser = async () => {
+  //     if (loggedIn) {
+  //       const response = await fetch("http://127.0.0.1:5000/auth/info", {
+  //         method: "GET",
+  //       });
+  //       const data = await response.json();
+  //       console.log(data);
+  //     }
+  //   };
+  //   getUser();
+  // }, []);
+
+  // useEffect(() => {
+  //   const testing = async () => {
+  //     if (loggedIn) {
+  //       const response = await fetch("http://127.0.0.1:5000/", {
+  //         method: "GET",
+  //       });
+  //       const data = await response.json();
+  //       console.log(data);
+  //     }
+  //   };
+  //   testing();
+  // }, []);
 
   const discordAuthUrl = `https://discord.com/api/oauth2/authorize?client_id=1094275757397786804&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2F&response_type=code&scope=identify`;
   const openMenu = () => {
@@ -46,6 +75,29 @@ export default function Header() {
     window.location.href = discordAuthUrl;
   };
 
+  const setSession = async () => {
+    axios
+      .get("http://127.0.0.1:5000/set", {
+        withCredentials: true,
+      })
+      .then((response) => console.log(response.data))
+      .catch((error) => console.error(error));
+  };
+
+  const getSession = async () => {
+    axios
+      .get("http://127.0.0.1:5000/get", {
+        withCredentials: true,
+      })
+      .then((response) => console.log(response.data))
+      .catch((error) => console.error(error));
+  };
+
+  const logOut = () => {
+    localStorage.removeItem("isLoggedIn");
+    fetch("http://127.0.0.1:5000/auth/logout");
+  };
+
   return (
     <div className="nav">
       <Link to="/">
@@ -58,11 +110,18 @@ export default function Header() {
       <div className="nav-container">
         <div className={showMenu ? "login-modal" : "login-modal hidden"}>
           {!loggedIn ? (
-            <button onClick={handleDiscordLogin} className="nav-button">
-              Sign In
-            </button>
+            <>
+              <button onClick={handleDiscordLogin} className="nav-button">
+                Sign In
+              </button>
+              <button onClick={handleDiscordLogin} className="nav-button">
+                Sign In
+              </button>
+            </>
           ) : (
-            <button className="nav-button">Log Out</button>
+            <button onClick={logOut} className="nav-button">
+              Log Out
+            </button>
           )}
         </div>
         <Link to="/" className="nav-button">
@@ -87,6 +146,8 @@ export default function Header() {
         <button onClick={() => setShowMenu(!showMenu)} className="nav-button">
           {loggedIn ? user.discord_username : "Discord Login"}
         </button>
+        <button onClick={setSession}>SET SESSION</button>
+        <button onClick={getSession}>GET SESSION</button>
         {/* {showMenu && (
           <button onClick={closeMenu} className="nav-button">
             {user ? user : "Sign In"}
