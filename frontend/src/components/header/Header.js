@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./header.css";
 
 export default function Header() {
-  const [showMenu, setShowMenu] = useState(false);
-  const [user, setUser] = useState("Sign In");
-  const openMenu = () => {
-    if (showMenu) return;
-    setShowMenu(true);
-  };
+  // const [showMenu, setShowMenu] = useState(false);
+  // const [user, setUser] = useState("Sign In");
+  // const openMenu = () => {
+  //   if (showMenu) return;
+  //   setShowMenu(true);
+  // };
 
-  const closeMenu = () => {
-    if (!showMenu) return;
-    setShowMenu(false);
-  };
+  // const closeMenu = () => {
+  //   if (!showMenu) return;
+  //   setShowMenu(false);
+  // };
 
   return (
     <div className="nav">
