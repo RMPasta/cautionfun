@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from 'react-router-dom';
-import SupaBaseAuth from "../../components/supabase-auth/SupaBaseAuth";
-import { createClient } from "@supabase/supabase-js";
+import { Link } from "react-router-dom";
 import "./header.css";
 
 export default function Header() {
@@ -17,41 +15,19 @@ export default function Header() {
     setShowMenu(false);
   };
 
-  const supabase = createClient(
-    process.env.REACT_APP_SUPABASE_URL,
-    process.env.REACT_APP_ANON_KEY
-  );
-
-  useEffect(() => {
-    const getUserData = async () => {
-      await supabase.auth.getUser().then((value) => {
-        if (value.data?.user) {
-          if (value.data.user.identities[0].identity_data.name) {
-            //set discord name
-            setUser(value.data.user.identities[0].identity_data.name);
-          } else {
-            //set email name
-            setUser(value.data.user.identities[0].identity_data.email.split("@")[0]);
-        }
-        }
-    });
-};
-getUserData();
-}, [supabase.auth]);
-
   return (
     <div className="nav">
-      <Link to='/'>
-      <img
-        src={require("../../images/yt-thumbnail.png")}
-        alt="cautionfun logo"
-        className="caution-pic-nav"
-      />
+      <Link to="/">
+        <img
+          src={require("../../images/yt-thumbnail.png")}
+          alt="cautionfun logo"
+          className="caution-pic-nav"
+        />
       </Link>
       <div className="nav-container">
-      <div className={showMenu ? "login-modal" : "login-modal hidden"}>
-        <SupaBaseAuth showMenu={showMenu} setShowMenu={setShowMenu} setUser={setUser} user={user}/>
-      </div>
+        {/* <div className={showMenu ? "login-modal" : "login-modal hidden"}>
+            <p>FILLER</p>
+        </div> */}
         <Link to="/" className="nav-button">
           <div>Home</div>
         </Link>
@@ -68,12 +44,15 @@ getUserData();
           to="https://cautionfun.square.site"
           target="blank"
           className="nav-button"
-          >
+        >
           <div>Merch</div>
         </Link>
 
-          { !showMenu && <button onClick={openMenu} className="nav-button">{user ? user : "Sign In"}</button> }
-          { showMenu && <button onClick={closeMenu} className="nav-button">{user ? user : "Sign In"}</button> }
+        {/* {!showMenu && (
+          <button onClick={openMenu} className="nav-button">
+            {user ? user : "Sign In"}
+          </button>
+        )} */}
       </div>
     </div>
   );
