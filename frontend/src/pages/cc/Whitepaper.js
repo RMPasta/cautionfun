@@ -1,5 +1,5 @@
 import React from "react";
-import pdf from "./CautionCoinWhitepaper_FinalDraft2.pdf";
+import pdf from "./CautionCoinWhitepaper_FinalDraft_2.pdf";
 
 export default function Whitepaper() {
   return (
